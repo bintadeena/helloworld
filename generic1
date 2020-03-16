@@ -1,0 +1,34 @@
+using System;
+using System.Collections.Generic;
+					
+public class Program
+{
+	public static void Main()
+	{
+		GenericCollection <int> generic1 = new GenericCollection<int>();
+		bool result1= generic1.compare(3,4);
+		
+		GenericCollection <string> generic2= new GenericCollection<string>();
+		bool result2= generic2.compare("bins","bins");
+		Console.WriteLine("Integer Comparison: {0}\nString Comparison: {1}", result1, result2);  
+	}
+}
+public class GenericCollection< UnKnownDataType >
+{
+	public bool compare(UnKnownDataType var1 , UnKnownDataType var2)
+	{
+		if(var1.Equals(var2))
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+}
+
+/*
+Integer Comparison: False
+String Comparison: True
+*/
